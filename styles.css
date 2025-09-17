@@ -6,12 +6,33 @@
     font-style: normal;
     font-weight: 500;
 }
-
+body {
+    padding: 0 1rem 0 1rem
+}
+p, ul, li {
+    margin: 0;
+}
+ul {
+    padding-left: 2em;
+}
 h1, h2, h3, h4 {
+    margin: 0;
     font-optical-sizing: auto;
     font-style: normal;
     font-family: "Coming Soon", sans-serif;
     font-weight: 800;
+}
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: white;
+    background-color: black;
+}
+a:hover {
+    color: black;
+    background-color: white;
+    text-decoration: underline;
 }
 /* #endregion */
 
@@ -26,7 +47,6 @@ nav .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1em 0 1em;
 }
 nav .title img {
     height: 60%;
@@ -36,7 +56,6 @@ nav .title img {
 
 /* #region header.menu */
 nav .menu {
-    padding: 0 1em 0 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,14 +75,58 @@ nav .menu li:not(:last-of-type)::after {
     margin: 0 0.2em 0 0.4em;
     content: "/";
 }
-nav a {
-    text-decoration: none;
+/* #endregion */
+/* #endregion */
+
+/* #region section */
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "hero hero hero"
+        "project experience education"
+        "review review review";
+    justify-content: center;
+    gap: 2rem;
 }
-nav a:hover {
-    text-decoration: underline;
+/* #region section.hero */
+section .hero {
+    height: 40svh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    grid-area: hero;
 }
-nav a:visited {
-    color: black;
+/* #endregion */
+/* #region section.project */
+section .project {
+    grid-area: project;
+}
+/* #endregion */
+/* #region section.experience */
+section .experience {
+    grid-area: experience;
+}
+/* #endregion */
+/* #region section.education */
+section .education {
+    grid-area: education;
+}
+/* #endregion */
+/* #region section.review */
+section .review {
+    grid-area: review;
+}
+section .review .review-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    overflow-x: scroll;
+}
+section .review .review-container .review-content {
+    width: 20rem;
+    
 }
 /* #endregion */
 /* #endregion */
