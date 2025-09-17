@@ -6,8 +6,12 @@
     font-style: normal;
     font-weight: 500;
 }
+html {
+    max-width: 1366px;
+    margin: auto;
+}
 body {
-    padding: 0 1rem 0 1rem
+    padding: 0 1rem 0 1rem;
 }
 p, ul, li {
     margin: 0;
@@ -126,7 +130,58 @@ section .review .review-container {
 }
 section .review .review-container .review-content {
     width: 20rem;
-    
+    padding: 1rem;
+    border-style: solid;
+    border-width: 0.125rem;
+    border-color: black;
+    border-radius: 1.6rem;
+    display: grid;
+    gap: 1rem;
+}
+section .review .review-container .review-content > div {
+    color: gray;
 }
 /* #endregion */
 /* #endregion */
+
+/* #region footer */
+footer {
+    height: 10svh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+footer p {
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "Coming Soon", sans-serif;
+    font-weight: 800;
+}
+/* #endregion */
+
+@media only screen and (max-width: 720px) {
+    body {
+        padding: 0 0.1rem 0 0.1rem;
+    }
+    section {
+        display: grid;
+        /* grid-auto-flow: row; */
+        grid-template-columns: none;
+        grid-template-areas:
+            "hero"
+            "project"
+            "experience"
+            "education"
+            "review";
+        justify-content: center;
+        gap: 2rem;
+    }
+    section .review {
+        overflow:hidden;
+        /* display: none; */
+        /* max-width: 100lvw; */
+    }
+    section .review .review-container .review-content {
+        width: 80lvw;
+    }
+  }
