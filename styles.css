@@ -107,10 +107,29 @@ section .hero {
 section .project {
     grid-area: project;
 }
+section .project ul {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+section .project li {
+    display: grid;
+    padding: 0.6rem 0 0.6rem 0;
+}
+section .project li:not(:last-of-type){
+    border-bottom: 0.125rem solid black;
+}
 /* #endregion */
 /* #region section.experience */
 section .experience {
     grid-area: experience;
+}
+section .experience .experience-container {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
 }
 /* #endregion */
 /* #region section.education */
@@ -131,9 +150,7 @@ section .review .review-container {
 section .review .review-container .review-content {
     width: 20rem;
     padding: 1rem;
-    border-style: solid;
-    border-width: 0.125rem;
-    border-color: black;
+    border: 0.125rem solid black;
     border-radius: 1.6rem;
     display: grid;
     gap: 1rem;
@@ -163,6 +180,26 @@ footer p {
     body {
         padding: 0 0.1rem 0 0.1rem;
     }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    header {
+        overflow: hidden;
+    }
+    header nav {
+        flex-direction: column;
+        height: fit-content;
+        gap: 1rem;
+    }
+    header nav .title {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    header nav .title img {
+        height: auto;
+        width: 10%;
+    }
     section {
         display: grid;
         /* grid-auto-flow: row; */
@@ -174,7 +211,15 @@ footer p {
             "education"
             "review";
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
+    }
+    
+    section .hero {
+        padding: 1rem 0 0 0;
+        height: fit-content;
+    }
+    section .project li {
+        text-align: center;
     }
     section .review {
         overflow:hidden;
